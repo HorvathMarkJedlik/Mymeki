@@ -1,3 +1,17 @@
-@for (item of products; track $index) {
-  {{item.name}}
-}
+<h2>Rendelj a McDonald's-ból!</h2>
+<ul>
+  @for (item of products; track $index) {
+    <li (click)="addItem(item)" >
+      <div class="name" >{{item.name}}</div>
+      <div><img [src]="item.picture_url" alt=""></div>
+      <div class="price" >{{item.price}} Ft</div>
+    </li>
+    }
+</ul>
+<hr>
+
+<div class="productsOrder" >
+  @for (item of productsInCart; track $index) {
+    <app-product-item [product]="item" ></app-product-item>
+  }
+</div>

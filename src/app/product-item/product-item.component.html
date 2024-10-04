@@ -1,1 +1,9 @@
-<p>product-item works!</p>
+<div class="product" >
+  {{product.name}}
+  <img [src]="product.picture_url" alt="">
+  <div class="quantity">
+    <button (click)="Increase()" >+</button>
+    {{product.quantity}}db
+    <button (click)="Decrease()" >-</button>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+.productsOrder{
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -1,14 +1,22 @@
 import { Component } from '@angular/core';
 import { ProductModel } from '../models/product.model';
+import { ProductItemComponent } from "../product-item/product-item.component";
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [],
+  imports: [ProductItemComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })
 export class ProductListComponent {
+
+  productsInCart: ProductModel[] = []
+
+  addItem(item: ProductModel){
+    this.productsInCart.push(item)
+  }
+
   products: ProductModel[] = [
     {
       id: 1,
