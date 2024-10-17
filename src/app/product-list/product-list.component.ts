@@ -18,6 +18,17 @@ export class ProductListComponent {
     if (!this.productsInCart.includes(item)) {
       this.productsInCart.push(item);
     }
+    this.CalculateMoney();
+  }
+
+  TotalMoney: number = 0;
+
+  CalculateMoney()
+  {
+    this.TotalMoney = 0;
+    this.productsInCart.forEach(element => {
+      this.TotalMoney += element.price * element.quantity;
+    });
   }
 
   products: ProductModel[] = [
