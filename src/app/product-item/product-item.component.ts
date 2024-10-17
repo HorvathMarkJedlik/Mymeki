@@ -16,6 +16,8 @@ export class ProductItemComponent {
   }
 
   Decrease(){
-    this.product.quantity--;
+    if(this.product.quantity > 1){
+      this.product.quantity--;
+    }
   }
 }

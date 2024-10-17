@@ -14,7 +14,10 @@ export class ProductListComponent {
   productsInCart: ProductModel[] = []
 
   addItem(item: ProductModel){
-    this.productsInCart.push(item)
+    item.quantity++;
+    if (!this.productsInCart.includes(item)) {
+      this.productsInCart.push(item);
+    }
   }
 
   products: ProductModel[] = [
